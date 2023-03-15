@@ -420,7 +420,8 @@ public class Invoice extends javax.swing.JInternalFrame {
         gtplLoad.setBackground(new java.awt.Color(51, 153, 0));
         gtplLoad.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         gtplLoad.setForeground(new java.awt.Color(255, 255, 255));
-        gtplLoad.setText("GTPL UPLOAD ");
+        gtplLoad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/operatorPackage/Doanload.png"))); // NOI18N
+        gtplLoad.setText("Gtpl Invoice ");
         gtplLoad.setPreferredSize(new java.awt.Dimension(144, 26));
         gtplLoad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -436,7 +437,8 @@ public class Invoice extends javax.swing.JInternalFrame {
         browse.setBackground(new java.awt.Color(102, 102, 102));
         browse.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         browse.setForeground(new java.awt.Color(255, 255, 255));
-        browse.setText("BROWSE");
+        browse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/operatorPackage/attchment.png"))); // NOI18N
+        browse.setText("Browse");
         browse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 browseActionPerformed(evt);
@@ -456,8 +458,8 @@ public class Invoice extends javax.swing.JInternalFrame {
                 .addGap(33, 33, 33)
                 .addComponent(txtPath, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(browse, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(browse)
+                .addGap(6, 6, 6)
                 .addComponent(gtplLoad, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -479,7 +481,8 @@ public class Invoice extends javax.swing.JInternalFrame {
         allianceLoad1.setBackground(new java.awt.Color(51, 153, 0));
         allianceLoad1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         allianceLoad1.setForeground(new java.awt.Color(255, 255, 255));
-        allianceLoad1.setText("ALLIANCE UPLOAD ");
+        allianceLoad1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/operatorPackage/Doanload.png"))); // NOI18N
+        allianceLoad1.setText("Alliance Invoice");
         allianceLoad1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 allianceLoad1ActionPerformed(evt);
@@ -494,7 +497,8 @@ public class Invoice extends javax.swing.JInternalFrame {
         browse1.setBackground(new java.awt.Color(102, 102, 102));
         browse1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         browse1.setForeground(new java.awt.Color(255, 255, 255));
-        browse1.setText("BROWSE");
+        browse1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/operatorPackage/attchment.png"))); // NOI18N
+        browse1.setText("Browse");
         browse1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 browse1ActionPerformed(evt);
@@ -514,9 +518,9 @@ public class Invoice extends javax.swing.JInternalFrame {
                 .addGap(33, 33, 33)
                 .addComponent(txtPath1, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(browse1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(allianceLoad1, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                .addComponent(browse1)
+                .addGap(6, 6, 6)
+                .addComponent(allianceLoad1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel9Layout.setVerticalGroup(
@@ -550,9 +554,10 @@ public class Invoice extends javax.swing.JInternalFrame {
         });
 
         reset.setBackground(new java.awt.Color(0, 0, 204));
-        reset.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        reset.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         reset.setForeground(new java.awt.Color(255, 255, 255));
-        reset.setText("RESET");
+        reset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/operatorPackage/ReloadFilter.png"))); // NOI18N
+        reset.setText("Reset");
         reset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 resetActionPerformed(evt);
@@ -577,7 +582,8 @@ public class Invoice extends javax.swing.JInternalFrame {
         filter1.setBackground(new java.awt.Color(255, 0, 51));
         filter1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         filter1.setForeground(new java.awt.Color(255, 255, 255));
-        filter1.setText("FILTER");
+        filter1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/operatorPackage/Filter.png"))); // NOI18N
+        filter1.setText("Filter");
         filter1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filter1ActionPerformed(evt);
@@ -600,7 +606,7 @@ public class Invoice extends javax.swing.JInternalFrame {
         trunate.setBackground(new java.awt.Color(255, 0, 51));
         trunate.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         trunate.setForeground(new java.awt.Color(255, 255, 255));
-        trunate.setText("DELETE");
+        trunate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/operatorPackage/delete.png"))); // NOI18N
         trunate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 trunateActionPerformed(evt);
@@ -709,9 +715,6 @@ public class Invoice extends javax.swing.JInternalFrame {
                 .addComponent(txtCount, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(trunate, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel9)
                 .addGap(1, 1, 1)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -739,6 +742,9 @@ public class Invoice extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addComponent(filter1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(trunate))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

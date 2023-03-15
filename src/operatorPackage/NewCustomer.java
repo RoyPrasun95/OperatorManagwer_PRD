@@ -23,7 +23,13 @@ import javax.swing.JInternalFrame;
  * @author prasu
  */
 
+
 public class NewCustomer extends javax.swing.JInternalFrame {
+    String global_name;
+String global_ip;
+String global_phno;
+String global_userid;
+int global_operator;
 
     /**
      * Creates new form Customer
@@ -374,8 +380,9 @@ public void view()
         txtIp6 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
-        gtplCustAdd = new javax.swing.JButton();
         gtplCustUpdate = new javax.swing.JButton();
+        clearGtplForm = new javax.swing.JButton();
+        gtplCustAdd = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         txtIp1 = new javax.swing.JTextField();
         txtIp2 = new javax.swing.JTextField();
@@ -391,6 +398,7 @@ public void view()
         jLabel19 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         AllianceCustAdd = new javax.swing.JButton();
+        clearAllianceForm = new javax.swing.JButton();
         AllianceCustupdate = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableClient = new javax.swing.JTable();
@@ -475,22 +483,9 @@ public void view()
             }
         });
 
-        gtplCustAdd.setBackground(new java.awt.Color(51, 153, 0));
-        gtplCustAdd.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        gtplCustAdd.setText("Add");
-        gtplCustAdd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gtplCustAddActionPerformed(evt);
-            }
-        });
-        gtplCustAdd.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                gtplCustAddKeyPressed(evt);
-            }
-        });
-
-        gtplCustUpdate.setBackground(new java.awt.Color(51, 153, 0));
+        gtplCustUpdate.setBackground(new java.awt.Color(51, 102, 255));
         gtplCustUpdate.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        gtplCustUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/operatorPackage/update Customer.png"))); // NOI18N
         gtplCustUpdate.setText("Update");
         gtplCustUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -500,6 +495,36 @@ public void view()
         gtplCustUpdate.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 gtplCustUpdateKeyPressed(evt);
+            }
+        });
+
+        clearGtplForm.setBackground(new java.awt.Color(204, 170, 102));
+        clearGtplForm.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        clearGtplForm.setForeground(new java.awt.Color(255, 255, 255));
+        clearGtplForm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/operatorPackage/Clear customer.png"))); // NOI18N
+        clearGtplForm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearGtplFormActionPerformed(evt);
+            }
+        });
+        clearGtplForm.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                clearGtplFormKeyPressed(evt);
+            }
+        });
+
+        gtplCustAdd.setBackground(new java.awt.Color(51, 153, 0));
+        gtplCustAdd.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        gtplCustAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/operatorPackage/addCustomer.png"))); // NOI18N
+        gtplCustAdd.setText("Add");
+        gtplCustAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gtplCustAddActionPerformed(evt);
+            }
+        });
+        gtplCustAdd.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                gtplCustAddKeyPressed(evt);
             }
         });
 
@@ -532,15 +557,17 @@ public void view()
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(70, 70, 70)
                         .addComponent(jLabel14)
-                        .addGap(4, 4, 4))
+                        .addGap(4, 4, 4)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                        .addComponent(gtplCustAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(gtplCustUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(gtplCustAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 53, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(clearGtplForm, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(87, 87, 87))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -555,15 +582,22 @@ public void view()
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(txtIp6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(txtName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12)
-                    .addComponent(txtPhno1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(gtplCustAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(gtplCustUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(70, 70, 70))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(txtName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12)
+                            .addComponent(txtPhno1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(gtplCustUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(gtplCustAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(clearGtplForm, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(73, 73, 73))
         );
 
         jTabbedPane1.addTab("GTPL", jPanel4);
@@ -636,6 +670,7 @@ public void view()
 
         AllianceCustAdd.setBackground(new java.awt.Color(51, 153, 0));
         AllianceCustAdd.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        AllianceCustAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/operatorPackage/addCustomer.png"))); // NOI18N
         AllianceCustAdd.setText("Add");
         AllianceCustAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -648,8 +683,24 @@ public void view()
             }
         });
 
-        AllianceCustupdate.setBackground(new java.awt.Color(51, 153, 0));
+        clearAllianceForm.setBackground(new java.awt.Color(141, 181, 128));
+        clearAllianceForm.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        clearAllianceForm.setForeground(new java.awt.Color(255, 255, 255));
+        clearAllianceForm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/operatorPackage/Clear customer.png"))); // NOI18N
+        clearAllianceForm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearAllianceFormActionPerformed(evt);
+            }
+        });
+        clearAllianceForm.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                clearAllianceFormKeyPressed(evt);
+            }
+        });
+
+        AllianceCustupdate.setBackground(new java.awt.Color(51, 102, 255));
         AllianceCustupdate.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        AllianceCustupdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/operatorPackage/update Customer.png"))); // NOI18N
         AllianceCustupdate.setText("Update");
         AllianceCustupdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -697,15 +748,16 @@ public void view()
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(70, 70, 70)
                         .addComponent(jLabel19)
-                        .addGap(4, 4, 4))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(AllianceCustAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(AllianceCustupdate, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AllianceCustAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(54, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(clearAllianceForm, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -725,14 +777,18 @@ public void view()
                             .addComponent(txtIp3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtIp4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel230)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17)
-                    .addComponent(txtPhno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AllianceCustAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AllianceCustupdate, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(90, 90, 90))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel230)
+                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel17)
+                            .addComponent(txtPhno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(AllianceCustAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AllianceCustupdate, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(clearAllianceForm, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(91, 91, 91))
         );
 
         jTabbedPane1.addTab("ALLIANCE", jPanel5);
@@ -794,9 +850,10 @@ public void view()
         });
 
         reset.setBackground(new java.awt.Color(0, 0, 204));
-        reset.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        reset.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         reset.setForeground(new java.awt.Color(255, 255, 255));
-        reset.setText("RESET");
+        reset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/operatorPackage/ReloadFilter.png"))); // NOI18N
+        reset.setText("Reset");
         reset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 resetActionPerformed(evt);
@@ -821,7 +878,8 @@ public void view()
         filter1.setBackground(new java.awt.Color(255, 0, 51));
         filter1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         filter1.setForeground(new java.awt.Color(255, 255, 255));
-        filter1.setText("FILTER");
+        filter1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/operatorPackage/Filter.png"))); // NOI18N
+        filter1.setText("Filter");
         filter1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filter1ActionPerformed(evt);
@@ -868,17 +926,18 @@ public void view()
                                 .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(filter1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(230, 230, 230)
-                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(4, 4, 4)
-                                .addComponent(txtCount, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 539, Short.MAX_VALUE)
+                        .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(filter1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(230, 230, 230)
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(4, 4, 4)
+                        .addComponent(txtCount, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1156, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -900,7 +959,7 @@ public void view()
                     .addComponent(filter1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCount, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -983,6 +1042,7 @@ public void view()
             
             if((flag1 && flag2&& flag3)==false)
             {
+                
                if(flag1==false)
                    JOptionPane.showMessageDialog(this,"<html><b style=\"color:Red;font-size:20px;\">Invalid UserName</b></html>");
                else if(flag2==false)
@@ -1238,6 +1298,10 @@ public void view()
              } catch (SQLException ex) {
                 Logger.getLogger(NewCustomer.class.getName()).log(Level.SEVERE, null, ex);
             }
+            global_name=name;
+            global_phno=ph_no;
+            global_operator=operator_id;
+            
             
             
         if(braodband .equals("ALLIANCE"))
@@ -1252,6 +1316,8 @@ public void view()
              txtIp4.setText(ip_address[3]);
              txtPhno.setText(ph_no);
              jComboBox1.setSelectedIndex(operator_id-1);
+             global_ip=txtIp1.getText()+"."+txtIp2.getText()+"."+txtIp3.getText()+"."+txtIp4.getText();
+             
             
             
             
@@ -1269,7 +1335,7 @@ public void view()
              txtIp6.setText(ip);
              txtPhno1.setText(ph_no);
              jComboBox2.setSelectedIndex(operator_id-1);
-        
+        global_userid=txtIp6.getText();
         }
         
     }//GEN-LAST:event_jTableClientMouseClicked
@@ -1286,13 +1352,14 @@ public void view()
             String cust_ip3=txtIp3.getText();
 
             String cust_ip4=txtIp4.getText();
-            int existingEntry;
+            boolean existingEntry=false;
             String cust_ip=cust_ip1+"."+cust_ip2+"."+cust_ip3+"."+cust_ip4;
             String cust_phno=txtPhno.getText();
             //System.out.print(cust_ip);
             boolean flag1=isValidIPAddress(cust_ip);
             boolean flag2=isValidPhno(cust_phno);
             boolean flag3=isValidName(cust_Name);
+            
             
             if((flag1 && flag2&& flag3)==false)
             {
@@ -1305,10 +1372,13 @@ public void view()
   
             }
             
-            else
+            else 
                 
 
-            {
+            { 
+            
+                
+            
 
                 String operator=null;
 
@@ -1333,10 +1403,9 @@ public void view()
                     {
                         operator_id=Integer.parseInt(rs.getString(1));
                         String query5="Update customer  set cust_name='"+cust_Name+"',cust_user_id='"+cust_ip+"' ,cust_operator_id='"+operator_id+"',cust_contact_no='"+cust_phno+"' where cust_id='"+cust_id+"';";
+                         if((global_name.equals(cust_Name)&& global_phno.equals(cust_phno)&& global_ip.equals(cust_ip)&& global_operator==operator_id))
+                         {int i=st.executeUpdate(query5);
 
-                        int i=st.executeUpdate(query5);
-
-                        JOptionPane.showMessageDialog(this,"<html><b style=\"color:green;font-size:20px;\">Record updated</b></html>");
 
                         view();
                         autoId ();
@@ -1348,6 +1417,12 @@ public void view()
                         txtPhno.setText("");
 
                         jComboBox1.setSelectedIndex(-1);
+                         }
+                         else
+                         
+JOptionPane.showMessageDialog(this,"<html><b style=\"color:Red;font-size:20px;\">No Changes Made</b></html>");
+
+                         
 
                     }   
 
@@ -1355,6 +1430,8 @@ public void view()
                 JOptionPane.showMessageDialog(this,"<html><b style=\"color:Red;font-size:20px;\">Local Operator Not Selected</b></html>");
 
             }
+            
+            
           
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(NewCustomer.class.getName()).log(Level.SEVERE, null, ex);
@@ -1395,7 +1472,7 @@ public void view()
                    JOptionPane.showMessageDialog(this,"<html><b style=\"color:Red;font-size:20px;\">Invalid Name</b></html>");
   
             }
-           else
+            else 
                
 
             {
@@ -1421,8 +1498,9 @@ public void view()
                     {
                         operator_id=Integer.parseInt(rs.getString(1));
                         String query5="Update customer  set cust_name='"+cust_Name+"',cust_user_id='"+cust_ip+"' ,cust_operator_id='"+operator_id+"',cust_contact_no='"+cust_phno+"' where cust_id='"+cust_id+"';";
+                     if(!(global_name.equals(cust_Name) && global_userid.equals(cust_ip) && global_phno.equals(cust_phno)&& global_operator==operator_id))        
 
-                        int i=st.executeUpdate(query5);
+                     {  int i=st.executeUpdate(query5);
 
                         JOptionPane.showMessageDialog(this,"<html><b style=\"color:green;font-size:20px;\">Record updated</b></html>");
                         view();
@@ -1434,12 +1512,21 @@ public void view()
 
                         jComboBox2.setSelectedIndex(-1);
 
-                    }   
+                    } else
+                     {JOptionPane.showMessageDialog(this,"<html><b style=\"color:Red;font-size:20px;\">No Changes Made</b></html>");
+}
+                         }
+                         
+                     
+                     
+                         
+                     
 
                 }  else
                 JOptionPane.showMessageDialog(this,"<html><b style=\"color:Red;font-size:20px;\">Local Operator Not Selected</b></html>");
 
             }
+            
             
             
 
@@ -1455,10 +1542,48 @@ public void view()
         // TODO add your handling code here:
     }//GEN-LAST:event_gtplCustUpdateKeyPressed
 
+    private void clearAllianceFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearAllianceFormActionPerformed
+        // TODO add your handling code here:
+        
+                         view();
+                        autoId ();
+                        txtName.setText("");
+                        txtIp1.setText("");
+                        txtIp2.setText("");
+                        txtIp3.setText("");
+                        txtIp4.setText("");
+                        txtPhno.setText("");
+
+                        jComboBox1.setSelectedIndex(-1);
+    }//GEN-LAST:event_clearAllianceFormActionPerformed
+
+    private void clearAllianceFormKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clearAllianceFormKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clearAllianceFormKeyPressed
+
+    private void clearGtplFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearGtplFormActionPerformed
+        // TODO add your handling code here:
+                       view();
+                        autoId ();
+                        txtName1.setText("");
+
+                        txtIp6.setText("");
+                        txtPhno1.setText("");
+
+                        jComboBox2.setSelectedIndex(-1);
+        
+    }//GEN-LAST:event_clearGtplFormActionPerformed
+
+    private void clearGtplFormKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clearGtplFormKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clearGtplFormKeyPressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AllianceCustAdd;
     private javax.swing.JButton AllianceCustupdate;
+    private javax.swing.JButton clearAllianceForm;
+    private javax.swing.JButton clearGtplForm;
     private javax.swing.JButton filter1;
     private javax.swing.JButton gtplCustAdd;
     private javax.swing.JButton gtplCustUpdate;
