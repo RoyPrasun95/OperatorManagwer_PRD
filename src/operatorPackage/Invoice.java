@@ -13,6 +13,7 @@ import javax.swing.table.DefaultTableModel;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.MouseEvent;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.ImageIcon;
@@ -31,6 +32,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.filechooser.FileNameExtensionFilter;
 /**
  *
@@ -660,6 +662,17 @@ public class Invoice extends javax.swing.JInternalFrame {
         jTableClient.setRowSelectionAllowed(false);
         jTableClient.setSelectionBackground(new java.awt.Color(38, 70, 63));
         jTableClient.setShowGrid(true);
+        jTableClient.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableClientMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jTableClientMouseEntered(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTableClientMousePressed(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTableClient);
 
         flag.setBackground(new java.awt.Color(255, 0, 51));
@@ -1411,6 +1424,30 @@ String filePath=null;
     private void txtamountFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtamountFocusGained
         // TODO add your handling code here:
     }//GEN-LAST:event_txtamountFocusGained
+
+    private void jTableClientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableClientMouseClicked
+        // TODO add your handling code here:
+      
+ //if (evt.getClickCount() == 2 && evt.getButton() == MouseEvent.BUTTON1) {
+    
+     JFrame jf2=new NewJFrame();
+    
+     
+    jf2.show();
+  
+        
+    }//GEN-LAST:event_jTableClientMouseClicked
+
+    private void jTableClientMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableClientMousePressed
+        // TODO add your handling code here:
+        
+       
+    }//GEN-LAST:event_jTableClientMousePressed
+
+    private void jTableClientMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableClientMouseEntered
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jTableClientMouseEntered
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -1403,8 +1403,9 @@ public void view()
                     {
                         operator_id=Integer.parseInt(rs.getString(1));
                         String query5="Update customer  set cust_name='"+cust_Name+"',cust_user_id='"+cust_ip+"' ,cust_operator_id='"+operator_id+"',cust_contact_no='"+cust_phno+"' where cust_id='"+cust_id+"';";
-                         if((global_name.equals(cust_Name)&& global_phno.equals(cust_phno)&& global_ip.equals(cust_ip)&& global_operator==operator_id))
+                         if(!(global_name.equals(cust_Name)&& global_phno.equals(cust_phno)&& global_ip.equals(cust_ip)&& global_operator==operator_id))
                          {int i=st.executeUpdate(query5);
+                        JOptionPane.showMessageDialog(this,"<html><b style=\"color:green;font-size:20px;\">Record updated</b></html>");
 
 
                         view();
